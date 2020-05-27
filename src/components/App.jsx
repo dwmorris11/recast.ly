@@ -6,11 +6,15 @@ class App extends React.Component{
     super(props);
     this.state = {
       done: false,
-      videos: [exampleVideoData],
+      videos: exampleVideoData,
       currentPlaying: exampleVideoData[0]
     };
   }
-
+  onClick() {
+        this.setState = {
+          currentPlaying: djf
+        };
+      }
   render() {
     return (
     <div>

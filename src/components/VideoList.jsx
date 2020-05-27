@@ -1,8 +1,8 @@
 import VideoListEntry from './VideoListEntry.js';
 var VideoList = function (props) {
   var elements = props.videos;
-  var output = elements.map((video) => (
-    VideoListEntry(video)
+  var output = elements.map((video, index) => (
+    VideoListEntry(video, index)
   ));
   return output;
 };
