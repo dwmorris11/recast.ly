@@ -9,30 +9,31 @@ class App extends React.Component{
       videos: exampleVideoData,
       currentPlaying: exampleVideoData[0]
     };
+    this.handleClick = this.handleClick.bind(this);
   }
-  onClick() {
-        this.setState = {
-          currentPlaying: djf
-        };
-      }
+  handleClick(index) {
+    this.setState ({
+      currentPlaying: exampleVideoData[index]
+    });
+  }
   render() {
     return (
-    <div>
-      <nav className="navbar">
-        <div className="col-md-6 offset-md-3">
-          <div><h5><em>search</em> view goes here</h5></div>
-        </div>
-      </nav>
-      <div className="row">
-        <div className="col-md-7">
-          <VideoPlayer video={this.state.currentPlaying}/>
+      <div>
+        <nav className="navbar">
+          <div className="col-md-6 offset-md-3">
+            <div><h5><em>search</em> view goes here</h5></div>
+          </div>
+        </nav>
+        <div className="row">
+          <div className="col-md-7">
+            <VideoPlayer video={this.state.currentPlaying}/>
 
-        </div>
-        <div className="col-md-5">
-          <VideoList videos={this.state.videos}/>
+          </div>
+          <div className="col-md-5">
+            <VideoList videos={this.state.videos} clickHandler={this.handleClick}/>
+          </div>
         </div>
       </div>
-    </div>
     );
   }
 }
