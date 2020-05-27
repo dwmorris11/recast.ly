@@ -5,8 +5,7 @@ var VideoList = (props) => { //pomander did not like the arrow function here so 
     <div className="video-list">
      <div><h5><em>{elements.snippet.title}</em><img src={elements.thumbnails.default}/></h5></div>
     </div>
-  )}
-
+  )});
 };
 //
 // PropTypes tell other developers what `props` a component expects
