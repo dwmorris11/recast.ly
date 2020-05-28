@@ -3,6 +3,7 @@ import exampleVideoData from '../data/exampleVideoData.js';
 import VideoPlayer from './VideoPlayer.js';
 import Search from './Search.js';
 import searchYouTube from '../lib/searchYouTube.js';
+import YOUTUBE_API_KEY from "../config/youtube.js";
 class App extends React.Component{
   constructor(props) {
     super(props);
@@ -33,7 +34,10 @@ class App extends React.Component{
       query: request,
       max: 5
     };
-    searchYouTube(options, (data) => (this.searchState(data)))
+    searchYouTube(options, (data) => (this.searchState(data)));
+  }
+  componentDidMount() {
+    this.search(YOUTUBE_API_KEY, "dogs");
   }
 
   render() {

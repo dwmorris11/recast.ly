@@ -6,11 +6,13 @@ class Search extends React.Component {
       value: ''
     };
     this.handleChange = this.handleChange.bind(this);
+    this.emitChangeDebounced = _.debounce(()=>(this.props.searchFunction(YOUTUBE_API_KEY, this.state.value)), 500);
   }
   handleChange(event) {
     this.setState ({
       value: event.target.value
     });
+    this.emitChangeDebounced();
   }
 
   render() {
